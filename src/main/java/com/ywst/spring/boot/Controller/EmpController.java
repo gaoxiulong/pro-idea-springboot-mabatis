@@ -24,8 +24,6 @@ public class EmpController {
 
     @RequestMapping("/main")
     public String index(){
-
-        System.out.print("你调用我了");
         return "index";
     }
 

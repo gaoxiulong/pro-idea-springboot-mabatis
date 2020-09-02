@@ -28,4 +28,10 @@ public class EmpController {
         return "index";
     }
 
+    @RequestMapping("/page")
+    @ResponseBody
+    public String page(){
+        return "This is Page.";
+    }
+
 }

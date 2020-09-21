@@ -17,21 +17,24 @@ public class EmpController {
     private EmpService empService;
 
     //springmvc框架
+    //输出数据库的数据
     @RequestMapping("/ListEmp")
     @ResponseBody
     public List<Emp> list(){
         return empService.getAll();
     }
 
+    //跳转到视图页面
     @RequestMapping("/main")
     public String index(){
         return "index";
     }
 
+    //输出字符串到页面
     @RequestMapping("/page")
     @ResponseBody
     public String page(){
-        return "This is Page.";
+        return "This is a Page.";
     }
 
 }

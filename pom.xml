@@ -49,6 +49,7 @@
 		</dependency>
 	</dependencies>
 
+		<!-- 插件管理-->
 	<build>
 		<plugins>
 			<plugin>

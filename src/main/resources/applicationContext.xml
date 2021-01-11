@@ -2,10 +2,16 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <!--spring框架 -->
+    <!--spring框架 ,IOC玩配置-->
     <bean id="emp" class="com.ywst.spring.boot.entity.Emp">
         <property name="empId" value="1"/>
         <property name="empName" value="lisalone"/>
         <property name="empAge" value="24"/>
     </bean>
+    <bean id="emp1" class="com.ywst.spring.boot.entity.Emp">
+        <property name="empId" value="2"/>
+        <property name="empName" value="lisalone2"/>
+        <property name="empAge" value="25"/>
+    </bean>
+
 </beans>

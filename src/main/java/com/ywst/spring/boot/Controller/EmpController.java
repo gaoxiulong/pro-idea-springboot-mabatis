@@ -4,7 +4,6 @@ import com.ywst.spring.boot.entity.Emp;
 import com.ywst.spring.boot.service.EmpService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -16,15 +15,15 @@ public class EmpController {
     @Autowired
     private EmpService empService;
 
-    //springmvc框架
+    //springmvc框架，玩注解
     //输出数据库的数据
-    @RequestMapping("/ListEmp")
+    @RequestMapping("/list/emp")
     @ResponseBody
     public List<Emp> list(){
         return empService.getAll();
     }
 
-    //跳转到视图页面
+    ////springmvc框架，跳转到视图
     @RequestMapping("/main")
     public String index(){
         return "index";

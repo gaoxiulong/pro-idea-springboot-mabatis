@@ -15,8 +15,9 @@ public class BootApplication  {
         //spring框架
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
         System.out.println(applicationContext.getBean("emp"));
+        System.out.println(applicationContext.getBean("emp1"));
 
-        System.out.println("系统启动成功！！");
+        System.out.println("系统已经成功启动！");
 
         //springboot打成war包步骤：
         //1.application修改如下代码：新加@ServletComponentScan注解，并且继承SpringBootServletInitializer

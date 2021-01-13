@@ -15,7 +15,6 @@ public class BootApplication  {
         //spring框架
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
         System.out.println(applicationContext.getBean("emp"));
-        System.out.println(applicationContext.getBean("emp1"));
 
         System.out.println("系统已经成功启动！");
 

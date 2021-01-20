@@ -12,9 +12,14 @@ public class BootApplication {
         //springboot框架
         SpringApplication.run(BootApplication.class, args);
 
-        //spring框架
+        //spring框架，IOC容器获取对象
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
         System.out.println(applicationContext.getBean("emp"));
+        System.out.println(applicationContext.getBean("emp1"));
+
+        System.out.println("系统已经成功启动!");
+
+        //springboot打war包的步骤
     }
 
 }

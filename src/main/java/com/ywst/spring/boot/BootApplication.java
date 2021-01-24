@@ -16,7 +16,7 @@ public class BootApplication {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
         System.out.println(applicationContext.getBean("emp"));
 
-        System.out.println("系统已经成功启动~~~");
+        System.out.println("系统已经成功启动啦！");
 
 
         //springboot打成war包步骤：

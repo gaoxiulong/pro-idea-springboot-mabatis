@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -41,16 +42,27 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
             http
                 .authorizeRequests()
-                .antMatchers("/list","/logo").permitAll() // 允许post请求/add-user，而无需认证
+                .antMatchers("/list","/index").permitAll() // 允许post请求/add-user，而无需认证
                 .anyRequest().authenticated() // 所有请求都需要验证
                 .and()
                 .formLogin() // 使用默认的登录页面
-                    .and()
-                    .logout()
-                    .logoutUrl("/logout")
-                    .logoutSuccessUrl("/login")
+                .loginPage("/login")
+                .defaultSuccessUrl("/main")   //登陆成功页面
+                .failureUrl("/index")         //登陆失败页面，重新登陆
+                .permitAll()
+                .and()
+                .logout()
+                .logoutUrl("/logout")
+                .logoutSuccessUrl("/index")     //登出成功页面
+                .permitAll()
                 .and()
                 .csrf().disable();// post请求要关闭csrf验证,不然访问报错；实际开发中开启，需要前端配合传递其他参数
 
+    }
+
+    @Override
+    public void configure(WebSecurity web) throws Exception {
+       //放行静态资源
+        web.ignoring().antMatchers("**/**.html");
     }
 }

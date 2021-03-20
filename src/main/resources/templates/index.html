@@ -1,16 +1,21 @@
 <!DOCTYPE html>
-<html lang="UTF-8" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>登陆</title>
 </head>
 <body>
-
-    <h1> This is Index Page</h1>
-    <a href="/user">toUser</a> <br><br>
-    <a href="/admin">toAdmin</a> <br><br>
-    <a href="/list">toList</a>  <br><br>
-    <a href="/logout">EXIT</a>
-
+<h1>登陆</h1>
+<form method="post" action="/login">
+    <div>
+        用户名：<input type="text" name="username">
+    </div>
+    <div>
+        密码：<input type="password" name="password">
+    </div>
+    <div>
+        <button type="submit">立即登陆</button>
+    </div>
+</form>
 </body>
 </html>

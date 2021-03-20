@@ -8,4 +8,5 @@
         select emp_id empId, emp_name empName, emp_age empAge
         from table_emp
     </select>
+
 </mapper>

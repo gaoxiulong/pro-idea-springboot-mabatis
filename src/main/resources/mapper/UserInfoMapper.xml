@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--Mybatis框架 -->
+<mapper namespace="com.ywst.spring.boot.mapper.UserInfoMapper">
+    <select id="getUserInfoByUsername"
+            resultType="com.ywst.spring.boot.entity.UserInfo">
+        select id , username , password ,role
+        from user where username= #{username}
+    </select>
+
+    <select id="getAll"
+            resultType="com.ywst.spring.boot.entity.UserInfo">
+        select id , username , password ,role
+        from user
+    </select>
+</mapper>

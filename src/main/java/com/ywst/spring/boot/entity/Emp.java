@@ -1,5 +1,7 @@
 package com.ywst.spring.boot.entity;
 
+
+//@Data
 public class Emp {
     private Integer empId;
     private String empName;

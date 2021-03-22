@@ -57,10 +57,10 @@ public class HelloController {
         return "main";
     }
 
-    @GetMapping("/index")
+/*    @GetMapping("/index")
     public String index(){
         return "index";
-    }
+    }*/
 
     @GetMapping("/get/user")
     @ResponseBody

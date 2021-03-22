@@ -8,7 +8,6 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -39,17 +38,12 @@ public class HelloController {
         return "user";
     }
 
-    @PreAuthorize("hasAnyRole('admin')") // 只能admin角色才能访问该方法
+    //@PreAuthorize("hasAnyRole('admin')") // 只能admin角色才能访问该方法
     @GetMapping("/admin")
     //@ResponseBody   //页面展示字符串时需要注解
     public String admin(){
        // return "具备admin权限";
         return "admin";
-    }
-
-    @GetMapping("/logo")
-    public String logout(){
-        return "logo";
     }
 
     @GetMapping("/main")
